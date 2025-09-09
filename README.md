@@ -6,3 +6,5 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 ## ✨ Features
 - 🎓 **CPI from Grade Points + Credits**  
   Formula: `CPI = (Grade Points × Credit Hours) ÷ Total Credits`
+
+  - 📈 **CPI from Percentage**
