@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8fc;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    button.primary {
+      background-color: #2e6ef7;
+      border: none;
+      color: #fff;
+      padding: 10px 22px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    section {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 650px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-bottom: 15px;
+    }
+    .problems {
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .calculator input {
+      padding: 8px;
+      margin: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .calculator button {
+      margin-top: 12px;
+    }
+    footer {
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2e6ef7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cumulative Performance Index (CPI) Calculator</h1>
+    <h2>Calculate Your CPI in Seconds</h2>
+    <p>Fast, accurate & student-friendly tool</p>
+    <button class="primary" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">Start Calculating</button>
+  </header>
+
+  <!-- Problems Section -->
+  <section>
+    <h2>Problems We Solve</h2>
+    <div class="problems">
+      <div>🎓 No more manual calculations</div>
+      <div>⏱ Instant results, save time</div>
+      <div>📊 Accurate & student-friendly</div>
+    </div>
+  </section>
+
+  <!-- CPI Calculator (Grades + Credits) -->
+  <section id="calculator" class="calculator">
+    <h2>CPI Calculator (Grade Points + Credits)</h2>
+    <p style="font-size:0.95rem;color:#555;">
+      <strong>Formula:</strong> CPI = (Grade Points × Credit Hours) ÷ Total Credits
+    </p>
+
+    <div>
+      <input id="gradePoints" type="number" placeholder="Enter Grade Points" step="0.09999999999" min="0" max="10">
+      <input id="creditHours" type="number" placeholder="Enter Credit Hours" step="0.5" min="0">
+    </div>
+
+    <div style="margin-top:15px;">
+      <label>Total Credits (optional): </label>
+      <input id="manualTotalCredits" type="number" placeholder="Enter total credits" step="0.5" min="0">
+    </div>
+
+    <br>
+    <button class="primary" onclick="calculateCPI()">Calculate CPI</button>
+
+    <div style="margin-top:10px;">
+      <p id="result" style="font-weight:bold;"></p>
+      <p id="breakdown" style="font-size:0.95rem;color:#555;"></p>
+    </div>
+  </section>
+
+  <!-- CPI Calculator (From Percentage) -->
+  <section id="percentageCalc" class="calculator">
+    <h2>CPI Calculator (From Percentage)</h2>
+    <p style="font-size:0.95rem;color:#555;">
+      <strong>Formula:</strong> CPI = (Percentage ÷ Conversion Factor) × (Earned Credits ÷ Total Credits)
+    </p>
+
+    <input id="percentageInput" type="number" placeholder="Enter your percentage" min="0" max="100" step="0.0999999999999">
+    <input id="conversionFactor" type="number" placeholder="Conversion Factor (default 9.5)" step="0.01" value="9.5">
+
+    <br><br>
+
+    <input id="earnedCreditsInput" type="number" placeholder="Earned Credits (optional)" step="0.5" min="0">
+    <input id="totalCreditsInput" type="number" placeholder="Total Credits (optional)" step="0.5" min="0">
+
+    <br>
+    <button class="primary" onclick="calculateFromPercentage()">Calculate CPI from Percentage</button>
+
+    <div style="margin-top:10px;">
+      <p id="percentageResult" style="font-weight:bold;"></p>
+      <p id="percentageBreakdown" style="font-size:0.95rem;color:#555;"></p>
+    </div>
+  </section>
+
+  <footer>
+  <p>Tool created for graduates 🎓</p>
+  <p>
+    💡 Support this free tool & check out my T-shirt store 👉 
+    <a href="https://www.teepublic.com/user/iltee-s" target="_blank">
+      ILTee's - Unique Tees for Unique You
+    </a>
+  </p>
+</footer>
+
+
+  <script>
+    function calculateCPI() {
+      const gradePoints = parseFloat(document.getElementById('gradePoints').value);
+      const creditHours = parseFloat(document.getElementById('creditHours').value);
+      let totalCredits = parseFloat(document.getElementById('manualTotalCredits').value);
+
+      const resultEl = document.getElementById('result');
+      const breakdownEl = document.getElementById('breakdown');
+
+      if (!isNaN(gradePoints) && !isNaN(creditHours) && creditHours > 0) {
+        let weightedSum = gradePoints * creditHours;
+
+        if (isNaN(totalCredits) || totalCredits <= 0) {
+          totalCredits = creditHours;
+        }
+
+        const cpi = (weightedSum / totalCredits).toFixed(2);
+        resultEl.textContent = `Your CPI is: ${cpi}`;
+        breakdownEl.textContent = `Weighted Sum = ${weightedSum.toFixed(2)}, Total Credits = ${totalCredits.toFixed(2)}`;
+      } else {
+        resultEl.textContent = 'Please enter valid grade points and credits.';
+        breakdownEl.textContent = '';
+      }
+    }
+
+    function calculateFromPercentage() {
+      const percentage = parseFloat(document.getElementById('percentageInput').value);
+      const factor = parseFloat(document.getElementById('conversionFactor').value) || 9.5;
+      const earnedCredits = parseFloat(document.getElementById('earnedCreditsInput').value);
+      const totalCredits = parseFloat(document.getElementById('totalCreditsInput').value);
+
+      const resultEl = document.getElementById('percentageResult');
+      const breakdownEl = document.getElementById('percentageBreakdown');
+
+      if (!isNaN(percentage) && percentage >= 0) {
+        let cpi = percentage / factor;
+
+        if (!isNaN(earnedCredits) && !isNaN(totalCredits) && totalCredits > 0) {
+          const creditRatio = earnedCredits / totalCredits;
+          cpi = cpi * creditRatio;
+          resultEl.textContent = `Your CPI is: ${cpi.toFixed(2)}`;
+          breakdownEl.textContent = `Adjusted CPI using credit ratio (${earnedCredits}/${totalCredits}) = ${creditRatio.toFixed(4)}`;
+        } else {
+          resultEl.textContent = `Your CPI is: ${cpi.toFixed(2)}`;
+          breakdownEl.textContent = `Unadjusted CPI (no credits provided)`;
+        }
+      } else {
+        resultEl.textContent = 'Please enter a valid percentage.';
+        breakdownEl.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>
