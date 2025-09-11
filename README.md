@@ -15,3 +15,5 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 - 🖥️ 100% front-end – Works directly in browser
 
 ---
+
+## 🚀 How to 
