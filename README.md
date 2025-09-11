@@ -11,3 +11,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
   Formula: `CPI = (Percentage ÷ Conversion Factor) × (Earned Credits ÷ Total Credits)`
 
 - ⏱ **Instant results** – No more manual calculations
+- 📊 **Accurate & student-friendly** 
