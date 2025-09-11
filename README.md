@@ -12,3 +12,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 
 - ⏱ **Instant results** – No more manual calculations
 - 📊 **Accurate & student-friendly** 
+- 🖥️ 100% front-end
