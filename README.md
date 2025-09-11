@@ -16,4 +16,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 
 ---
 
-## 🚀 How to 
+## 🚀 How to use
