@@ -19,3 +19,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 ## 🚀 How to use
 
 1. Enter your **grade points** and **credit hours**.
+2. (Optional) 
