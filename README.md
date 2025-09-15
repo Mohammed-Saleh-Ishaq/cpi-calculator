@@ -20,4 +20,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 
 1. Enter your **grade points** and **credit hours**.
 2. (Optional) Enter total credits if you want to override.
-3. 
+3. Click 
