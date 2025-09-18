@@ -23,4 +23,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 3. Click **Calculate CPI** to get instant results.
 4. or, calculate **from percentage** using your percentage and conversion factor.
 
--
+---
