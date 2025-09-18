@@ -22,3 +22,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 2. (Optional) Enter total credits if you want to override.
 3. Click **Calculate CPI** to get instant results.
 4. or, calculate **from percentage** using your percentage and conversion factor.
+
