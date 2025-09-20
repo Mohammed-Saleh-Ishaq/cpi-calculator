@@ -24,4 +24,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 4. or, calculate **from percentage** using your percentage and conversion factor.
 
 ---
-## 🛠️ Tech
+## 🛠️ Tech stack
