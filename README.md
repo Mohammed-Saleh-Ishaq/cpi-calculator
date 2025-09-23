@@ -27,4 +27,6 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 ## 🛠️ Tech Stacks
 1. Html
 2. Css
-3. 
+
+- **HTML5**  
+- **CSS3**
