@@ -30,4 +30,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 - **JavaScript**
 ---
 
-## 👨‍🎓 Authou
+## 👨‍🎓 Author
