@@ -31,4 +31,4 @@ This tool helps students quickly calculate their **Cumulative Performance Index 
 ---
 
 ## 👨‍🎓 Author
-Made with ❤️ by **https://github.com/Mohammed-Saleh-Ishaq
+Made with ❤️ by **https://github.com/Mohammed-Saleh-Ishaq*
